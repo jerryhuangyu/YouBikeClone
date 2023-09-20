@@ -17,7 +17,7 @@ const ToggleItem = ({ text, isToggle, handleToggle }) => {
       />
       <label
         htmlFor={`${text}-checkbox`}
-        className="ml-3 font-normal text-[18px] text-[#323232]"
+        className="pl-[35px] sm:ml-1 md:ml-3 font-normal text-[18px] text-[#323232]"
       >
         {text + "區"}
       </label>

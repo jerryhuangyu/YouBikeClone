@@ -28,7 +28,7 @@ const CityDropdown = ({setCityFilter}) => {
   return (
     <div>
       <Dropdown
-        className="text-[18px] bg-[#f6f6f6] font-medium px-[16px] py-[8px] rounded-[8px]"
+        className="text-[18px] w-full bg-[#f6f6f6] font-medium px-[16px] py-[8px] rounded-[8px]"
         menu={{ items, onClick: handleDropdownClick }}
         placement="bottom"
       >

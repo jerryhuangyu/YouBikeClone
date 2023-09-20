@@ -74,10 +74,10 @@ const SearchSection = ({ areaToggles, setAreaToggles, cityFilter, setCityFilter 
   }, [isToggleAll]);
 
   return (
-    <div className="max-w-6xl mx-auto flex justify-between">
-      <div className="flex flex-col gap-[20px] pt-[20px]">
+    <div className="px-[32px] pb-[32px] lg:p-0 max-w-6xl mx-auto flex justify-between">
+      <div className="flex flex-col gap-[20px] pt-[20px] w-full">
         <h1 className="text-[24px] font-bold text-green">站點資訊</h1>
-        <div className="flex flex-row gap-[16px]">
+        <div className="flex flex-col md:flex-row gap-[8px] md:gap-[16px]">
           <CityDropdown setCityFilter={setCityFilter} />
           <SearchBar />
         </div>
@@ -94,7 +94,7 @@ const SearchSection = ({ areaToggles, setAreaToggles, cityFilter, setCityFilter 
           />
         </div>
       </div>
-      <div className="h-[400px] flex pr-16 justify-end items-end">
+      <div className="hidden md:flex h-[400px] pr-16 justify-end items-end">
         <img src={biking} alt="ubike bikibg" />
       </div>
     </div>

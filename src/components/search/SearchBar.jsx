@@ -18,7 +18,7 @@ const SearchBar = () => {
   const autoCompleteRef = useRef(null);
 
   return (
-    <div className="bg-[#f6f6f6] rounded-[8px] relative">
+    <div className="bg-[#f6f6f6] w-full rounded-[8px] relative">
       <AutoComplete
         placeholder="尋找站點"
         className="w-[277px] h-[40px] ml-1 bg-[#f6f6f6] rounded-[8px] peer-focus"
