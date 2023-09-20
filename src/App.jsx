@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Border, Header } from "./components";
+import { SpaceForHeader, Header } from "./components";
 import { Home, Other } from "./pages";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <div className="w-full pb-10">
         <Header />
-        <Border />
+        <SpaceForHeader />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/instruction" element={<Other text={"使用說明"} />} />

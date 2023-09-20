@@ -1,11 +1,11 @@
 import Header from "./header/Header";
 import SearchSection from "./search/SearchSection";
-import Border from './Border';
+import SpaceForHeader from './SpaceForHeader';
 import TableSection from "./table/TableSection";
 
 export {
     Header,
     SearchSection,
-    Border,
+    SpaceForHeader,
     TableSection,
 }
