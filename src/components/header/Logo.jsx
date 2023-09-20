@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <div className="h-[95px] w-[95px] pr-4">
-      <img className='h-full' src="/ubike_logo.svg" alt="ubike logo" />
-    </div>
-  )
-}
+    <Link to={"/"} className="h-[95px] w-[95px] pr-4">
+      <img className="h-full" src="/ubike_logo.svg" alt="ubike logo" />
+    </Link>
+  );
+};
 
-export default Logo
+export default Logo;
