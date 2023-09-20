@@ -12,11 +12,11 @@ const TableBodyRow = ({
         isEven ? "bg-[#F6F6F6]" : "bg-white"
       } border-b text-[16px] text-[#323232]`}
     >
-      <td className="px-10 py-4 text-center">{city}</td>
-      <td className="px-10 py-4 text-center">{dist}</td>
-      <td className="px-10 py-4 text-center">{siteName}</td>
-      <td className="px-10 py-4 text-center">{availableBike}</td>
-      <td className="px-10 py-4 text-center">{availableSpace}</td>
+      <td className="md:px-10 py-4 text-center">{city}</td>
+      <td className="md:px-10 py-4 text-center">{dist}</td>
+      <td className="md:px-10 py-4 text-center">{siteName}</td>
+      <td className="md:px-10 py-4 text-center hidden md:block">{availableBike}</td>
+      <td className="md:px-10 py-4 text-center hidden md:block">{availableSpace}</td>
     </tr>
   );
 };

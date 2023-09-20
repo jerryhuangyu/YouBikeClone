@@ -29,7 +29,7 @@ const TableSection = ({ areaToggles, cityFilter }) => {
   }, [areaToggles, cityFilter]);
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto px-[32px] lg:px-0">
       <div className="relative overflow-x-auto shadow-md rounded-[28px]">
         <table className="w-full text-sm text-left text-[#323232] text-[16px] font-normal">
           <TableHeads handleSort={sortByFilter} />

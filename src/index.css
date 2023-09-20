@@ -28,7 +28,6 @@ input[type="checkbox"] {
 
 label {
   position: relative;
-  padding-left: 35px;
   cursor: pointer;
   font-weight: 400;
 }

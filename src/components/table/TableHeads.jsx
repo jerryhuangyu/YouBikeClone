@@ -12,6 +12,7 @@ const TableHead = ({
   headerText,
   handleClick,
   currentOnClick,
+  className,
   needSortIcon = true,
 }) => {
   const [countOnClick, setCountOnClick] = useState(0);
@@ -21,7 +22,7 @@ const TableHead = ({
   }, [currentOnClick]);
 
   return (
-    <th scope="col" className="px-10 py-3">
+    <th scope="col" className={`${className} md:px-10 py-3`}>
       <div
         className="flex items-end justify-center cursor-pointer"
         onClick={() => {
@@ -51,7 +52,11 @@ const TableHeads = ({ handleSort }) => {
   return (
     <thead className="text-[18px] font-medium h-[66px] text-white uppercase bg-green">
       <tr>
-        <TableHead headerText="縣市" handleClick={() => {}} needSortIcon={false} />
+        <TableHead
+          headerText="縣市"
+          handleClick={() => {}}
+          needSortIcon={false}
+        />
         <TableHead
           headerText="區域"
           currentOnClick={currentOnClick}
@@ -71,6 +76,7 @@ const TableHeads = ({ handleSort }) => {
           }}
         />
         <TableHead
+          className="hidden md:block"
           headerText="可借車輛"
           currentOnClick={currentOnClick}
           handleClick={() => {
@@ -80,6 +86,7 @@ const TableHeads = ({ handleSort }) => {
           }}
         />
         <TableHead
+          className="hidden md:block"
           headerText="可還空位"
           currentOnClick={currentOnClick}
           handleClick={() => {
