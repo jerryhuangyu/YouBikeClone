@@ -14,15 +14,20 @@ const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <div
       onClick={() => setIsMenuOpen(false)}
-      className={`${rightPos} fixed flex flex-col p-[32px] gap-[32px] top-[103px] w-[1800px] h-[100%] bg-green z-50 duration-300 ease-in-out`}
+      className={`${rightPos} fixed flex flex-col justify-between p-[32px] top-[103px] w-[100%] h-[calc(100%-103px)] bg-green z-50 duration-300 ease-in-out`}
     >
-      {linkItems.map((link, index) => (
-        <LinkItem
-          title={link}
-          navLink={navLinks[index]}
-          key={`link-${index}`}
-        />
-      ))}
+      <div className="flex flex-col gap-[32px]">
+        {linkItems.map((link, index) => (
+          <LinkItem
+            title={link}
+            navLink={navLinks[index]}
+            key={`link-${index}`}
+          />
+        ))}
+      </div>
+      <div className="text-green cursor-pointer bg-white rounded-[100px] w-[85px] h-[40px] flex justify-center items-center">
+        Login
+      </div>
     </div>
   );
 };
