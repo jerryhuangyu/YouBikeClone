@@ -15,8 +15,8 @@ const TableBodyRow = ({
       <td className="md:px-10 py-4 text-center">{city}</td>
       <td className="md:px-10 py-4 text-center">{dist}</td>
       <td className="md:px-10 py-4 text-center">{siteName}</td>
-      <td className="md:px-10 py-4 text-center hidden md:block">{availableBike}</td>
-      <td className="md:px-10 py-4 text-center hidden md:block">{availableSpace}</td>
+      <td className="md:px-10 py-4 text-center hidden md:table-cell">{availableBike}</td>
+      <td className="md:px-10 py-4 text-center hidden md:table-cell">{availableSpace}</td>
     </tr>
   );
 };

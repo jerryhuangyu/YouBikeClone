@@ -76,7 +76,7 @@ const TableHeads = ({ handleSort }) => {
           }}
         />
         <TableHead
-          className="hidden md:block"
+          className="hidden md:table-cell"
           headerText="可借車輛"
           currentOnClick={currentOnClick}
           handleClick={() => {
@@ -86,7 +86,7 @@ const TableHeads = ({ handleSort }) => {
           }}
         />
         <TableHead
-          className="hidden md:block"
+          className="hidden md:table-cell"
           headerText="可還空位"
           currentOnClick={currentOnClick}
           handleClick={() => {
