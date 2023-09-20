@@ -16,11 +16,11 @@ const taipeiDists = [
   "北投",
 ];
 
-const AreaToggle = () => {
+const AreaToggle = ({ areaToggles, setAreaToggles }) => {
   return (
     <div className="grid grid-cols-4 gap-[15px]">
       {taipeiDists.map((dist) => (
-        <ToggleItem text={dist + "區"} key={`${dist}-toggle-item`}/>
+        <ToggleItem text={dist} isToggle={areaToggles[dist]} handleToggle={setAreaToggles} key={`${dist}-toggle-item`}/>
       ))}
     </div>
   );

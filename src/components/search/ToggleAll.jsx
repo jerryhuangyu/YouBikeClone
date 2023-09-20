@@ -1,17 +1,13 @@
 import { message } from "antd";
 
-const ToggleItem = ({ text, isToggle, handleToggle }) => {
+const ToggleAll = ({ text, isToggle, handleToggle }) => {
   return (
     <div className="flex items-center h-[40px] cursor-pointer">
       <input
         id={`${text}-checkbox`}
         type="checkbox"
+        onChange={handleToggle}
         checked={isToggle}
-        onChange={() => {handleToggle(prev => {
-          let updateToggles = {...prev}
-          updateToggles[text] = !prev[text]
-          return updateToggles
-        })}}
         value=""
         className="custom-checkbox w-4 h-4 rounded accent-green"
       />
@@ -19,10 +15,10 @@ const ToggleItem = ({ text, isToggle, handleToggle }) => {
         htmlFor={`${text}-checkbox`}
         className="ml-3 font-normal text-[18px] text-[#323232]"
       >
-        {text + "區"}
+        {text}
       </label>
     </div>
   );
 };
 
-export default ToggleItem;
+export default ToggleAll;
