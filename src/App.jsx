@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Border, Header } from "./components";
-import { Home } from "./pages";
+import { Home, Other } from "./pages";
 
 function App() {
   return (
@@ -10,12 +10,12 @@ function App() {
         <Header />
         <Border />
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/instruction" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">使用說明</div>} />
-            <Route path="/price" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">收費方式</div>} />
-            <Route path="/infomation" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">站點資訊</div>} />
-            <Route path="/news" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">最新消息</div>} />
-            <Route path="/campaign" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">活動專區</div>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/instruction" element={<Other text={"使用說明"} />} />
+          <Route path="/price" element={<Other text={"收費方式"} />} />
+          <Route path="/infomation" element={<Other text={"站點資訊"} />} />
+          <Route path="/news" element={<Other text={"最新消息"} />} />
+          <Route path="/campaign" element={<Other text={"活動專區"} />} />
         </Routes>
       </div>
     </BrowserRouter>
