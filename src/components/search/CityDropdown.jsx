@@ -4,24 +4,25 @@ import { CaretDownOutlined } from "@ant-design/icons";
 
 const items = [
   {
-    key: "台北市",
-    label: "台北市",
+    key: "臺北市",
+    label: "臺北市",
   },
   {
     key: "新北市",
     label: "新北市",
   },
   {
-    key: "台中市",
-    label: "台中市",
+    key: "臺中市",
+    label: "臺中市",
   },
 ];
 
-const CityDropdown = () => {
+const CityDropdown = ({setCityFilter}) => {
   const [placeholderText, setPlaceholderText] = useState("選擇縣市");
   const handleDropdownClick = ({ key }) => {
     setPlaceholderText(key);
-    message.info(`Click on item ${key}`);
+    setCityFilter(key)
+    message.info(`Click on ${key}`);
   };
 
   return (

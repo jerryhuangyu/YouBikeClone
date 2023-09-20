@@ -17,13 +17,19 @@ function App() {
     北投: true,
     臺大公館校: true,
   });
+  const [cityFilter, setCityFilter] = useState("臺北市");
 
   return (
     <div className="w-full pb-10">
       <Header />
       <Border />
-      <SearchSection areaToggles={areaToggles} setAreaToggles={setAreaToggles}/>
-      <TableSection areaToggles={areaToggles} />
+      <SearchSection
+        areaToggles={areaToggles}
+        setAreaToggles={setAreaToggles}
+        cityFilter={cityFilter}
+        setCityFilter={setCityFilter}
+      />
+      <TableSection areaToggles={areaToggles} cityFilter={cityFilter} />
     </div>
   );
 }

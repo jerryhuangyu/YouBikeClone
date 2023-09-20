@@ -5,7 +5,36 @@ import AreaToggle from "./AreaToggle";
 import { biking } from "../../assets";
 import { useEffect, useState } from "react";
 
-const SearchSection = ({ areaToggles, setAreaToggles }) => {
+const taipeiDists = [
+  "松山",
+  "信義",
+  "大安",
+  "中山",
+  "中正",
+  "大同",
+  "萬華",
+  "文山",
+  "南港",
+  "內湖",
+  "士林",
+  "北投",
+];
+const newTaipeiDists = [
+  "板橋",
+  "三重",
+  "永和",
+  "中和",
+  "新莊",
+  "新店",
+  "土城",
+  "蘆洲",
+  "樹林",
+  "鶯歌",
+  "三峽",
+]
+const allDists = { 臺北市: taipeiDists, 新北市: newTaipeiDists, 臺中市: [] };
+
+const SearchSection = ({ areaToggles, setAreaToggles, cityFilter, setCityFilter }) => {
   const [isToggleAll, setIsToggleAll] = useState(true);
 
   useEffect(() => {
@@ -49,7 +78,7 @@ const SearchSection = ({ areaToggles, setAreaToggles }) => {
       <div className="flex flex-col gap-[20px] pt-[20px]">
         <h1 className="text-[24px] font-bold text-green">站點資訊</h1>
         <div className="flex flex-row gap-[16px]">
-          <CityDropdown />
+          <CityDropdown setCityFilter={setCityFilter} />
           <SearchBar />
         </div>
         <div className="flex flex-col gap-[15px]">
@@ -58,7 +87,11 @@ const SearchSection = ({ areaToggles, setAreaToggles }) => {
             isToggle={isToggleAll}
             handleToggle={(e) => setIsToggleAll(e.target.checked)}
           />
-          <AreaToggle areaToggles={areaToggles} setAreaToggles={setAreaToggles} />
+          <AreaToggle
+            areaToggles={areaToggles}
+            setAreaToggles={setAreaToggles}
+            dists={allDists[cityFilter]}
+          />
         </div>
       </div>
       <div className="h-[400px] flex pr-16 justify-end items-end">
