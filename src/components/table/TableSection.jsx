@@ -3,7 +3,7 @@ import TableHeads from "./TableHeads";
 import TableBody from "./TableBody";
 import axios from "axios";
 
-const TableSection = () => {
+const TableSection = ({ areaToggles }) => {
   const [youbikeDatas, setYoubikeDatas] = useState([]);
   const apiEndpoint =
     "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
@@ -21,11 +21,11 @@ const TableSection = () => {
     axios
       .get(apiEndpoint)
       .then((res) => {
-        console.log(res.data);
-        setYoubikeDatas(res.data);
+        const filterData = res.data.filter(item => areaToggles[item.sarea.replace("區", "")])
+        setYoubikeDatas(filterData);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [areaToggles]);
 
   return (
     <div className="max-w-6xl mx-auto">

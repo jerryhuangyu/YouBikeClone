@@ -5,22 +5,8 @@ import AreaToggle from "./AreaToggle";
 import { biking } from "../../assets";
 import { useEffect, useState } from "react";
 
-const SearchSection = () => {
+const SearchSection = ({ areaToggles, setAreaToggles }) => {
   const [isToggleAll, setIsToggleAll] = useState(true);
-  const [areaToggles, setAreaToggles] = useState({
-    松山: true,
-    信義: true,
-    大安: true,
-    中山: true,
-    中正: true,
-    大同: true,
-    萬華: true,
-    文山: true,
-    南港: true,
-    內湖: true,
-    士林: true,
-    北投: true,
-  });
 
   useEffect(() => {
     if (!isToggleAll) {
@@ -37,6 +23,7 @@ const SearchSection = () => {
         內湖: false,
         士林: false,
         北投: false,
+        臺大公館校: false,
       });
     } else {
       setAreaToggles({
@@ -52,6 +39,7 @@ const SearchSection = () => {
         內湖: true,
         士林: true,
         北投: true,
+        臺大公館校: true,
       });
     }
   }, [isToggleAll]);
