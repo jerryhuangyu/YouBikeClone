@@ -1,36 +1,24 @@
-import { useState } from "react";
-import { Border, Header, SearchSection, TableSection } from "./components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Border, Header } from "./components";
+import { Home } from "./pages";
 
 function App() {
-  const [areaToggles, setAreaToggles] = useState({
-    松山: true,
-    信義: true,
-    大安: true,
-    中山: true,
-    中正: true,
-    大同: true,
-    萬華: true,
-    文山: true,
-    南港: true,
-    內湖: true,
-    士林: true,
-    北投: true,
-    臺大公館校: true,
-  });
-  const [cityFilter, setCityFilter] = useState("臺北市");
-
   return (
-    <div className="w-full pb-10">
-      <Header />
-      <Border />
-      <SearchSection
-        areaToggles={areaToggles}
-        setAreaToggles={setAreaToggles}
-        cityFilter={cityFilter}
-        setCityFilter={setCityFilter}
-      />
-      <TableSection areaToggles={areaToggles} cityFilter={cityFilter} />
-    </div>
+    <BrowserRouter>
+      <div className="w-full pb-10">
+        <Header />
+        <Border />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/instruction" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">使用說明</div>} />
+            <Route path="/price" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">收費方式</div>} />
+            <Route path="/infomation" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">站點資訊</div>} />
+            <Route path="/news" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">最新消息</div>} />
+            <Route path="/campaign" element={<div className="max-w-6xl mx-auto pt-10 flex justify-center">活動專區</div>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
