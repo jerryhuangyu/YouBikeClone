@@ -3,7 +3,7 @@ import MenuIcon from "./MenuIcon";
 import SideMenu from "./SideMenu";
 
 const MobileMenu = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="md:hidden">
       <MenuIcon isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
