@@ -1,10 +1,10 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-const LinkItem = ({ title }) => {
+const LinkItem = ({ title, navLink }) => {
   return (
-    <div className="cursor-pointer hover:text-green text-green-dark text-[18px] font-medium hover:font-bold">
+    <Link to={navLink} className="cursor-pointer hover:text-green text-green-dark text-[18px] font-medium hover:font-bold">
       {title}
-    </div>
+    </Link>
   );
 };
 
