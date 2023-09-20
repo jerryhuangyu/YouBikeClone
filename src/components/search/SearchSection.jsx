@@ -75,7 +75,7 @@ const SearchSection = ({ areaToggles, setAreaToggles, cityFilter, setCityFilter 
 
   return (
     <div className="px-[32px] pb-[32px] lg:p-0 max-w-6xl mx-auto flex justify-between">
-      <div className="flex flex-col gap-[20px] pt-[20px] w-full">
+      <div className="flex flex-col gap-[20px] pt-[20px] w-full md:w-fit">
         <h1 className="text-[24px] font-bold text-green">站點資訊</h1>
         <div className="flex flex-col md:flex-row gap-[8px] md:gap-[16px]">
           <CityDropdown setCityFilter={setCityFilter} />
