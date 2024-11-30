@@ -7,7 +7,7 @@ const linkItems = ["使用說明", "收費方式", "站點資訊", "最新消息
 const navLinks = [
   "/instruction",
   "/price",
-  "/infomation",
+  "/information",
   "/news",
   "/campaign",
 ];

@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { SpaceForHeader, Header } from "./components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header, SpaceForHeader } from "./components";
 import { Home, Other } from "./pages";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/instruction" element={<Other text={"使用說明"} />} />
           <Route path="/price" element={<Other text={"收費方式"} />} />
-          <Route path="/infomation" element={<Other text={"站點資訊"} />} />
+          <Route path="/information" element={<Other text={"站點資訊"} />} />
           <Route path="/news" element={<Other text={"最新消息"} />} />
           <Route path="/campaign" element={<Other text={"活動專區"} />} />
         </Routes>
