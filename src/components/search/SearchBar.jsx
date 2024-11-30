@@ -1,6 +1,7 @@
 import { SearchOutlined as SearchOutlinedIcon } from "@ant-design/icons";
 import { AutoComplete, Input, Space } from "antd";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useDebounce } from "../../hooks/useDebounce";
 
 const options = [
   {
@@ -16,6 +17,8 @@ const options = [
 
 const SearchBar = ({ setSearchString }) => {
   const autoCompleteRef = useRef(null);
+  const [input, setInput] = useState("");
+  useDebounce(input, 1000, () => setSearchString(input));
 
   return (
     <div className="bg-[#f6f6f6] w-full rounded-[8px] relative">
@@ -25,7 +28,7 @@ const SearchBar = ({ setSearchString }) => {
         options={options}
         variant="borderless"
         ref={autoCompleteRef}
-        onChange={(value) => setSearchString(value)}
+        onChange={(value) => setInput(value)}
         filterOption={(inputValue, option) =>
           option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
         }
