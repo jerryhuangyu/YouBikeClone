@@ -18,6 +18,7 @@ const Home = () => {
     臺大公館校: true,
   });
   const [cityFilter, setCityFilter] = useState("臺北市");
+  const [searchString, setSearchString] = useState("");
 
   return (
     <>
@@ -26,8 +27,13 @@ const Home = () => {
         setAreaToggles={setAreaToggles}
         cityFilter={cityFilter}
         setCityFilter={setCityFilter}
+        setSearchString={setSearchString}
       />
-      <TableSection areaToggles={areaToggles} cityFilter={cityFilter} />
+      <TableSection
+        areaToggles={areaToggles}
+        cityFilter={cityFilter}
+        searchString={searchString}
+      />
     </>
   );
 };

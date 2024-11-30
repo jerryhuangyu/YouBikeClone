@@ -1,4 +1,4 @@
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined as SearchOutlinedIcon } from "@ant-design/icons";
 import { AutoComplete, Input, Space } from "antd";
 import { useRef } from "react";
 
@@ -14,7 +14,7 @@ const options = [
   },
 ];
 
-const SearchBar = () => {
+const SearchBar = ({ setSearchString }) => {
   const autoCompleteRef = useRef(null);
 
   return (
@@ -23,13 +23,14 @@ const SearchBar = () => {
         placeholder="尋找站點"
         className="w-[277px] h-[40px] ml-1 bg-[#f6f6f6] rounded-[8px] peer-focus"
         options={options}
-        bordered={false}
+        variant="borderless"
         ref={autoCompleteRef}
+        onChange={(value) => setSearchString(value)}
         filterOption={(inputValue, option) =>
           option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
         }
       />
-      <SearchOutlined
+      <SearchOutlinedIcon
         className="absolute top-3 right-[16px] peer"
         onClick={() => autoCompleteRef.current.focus()}
       />

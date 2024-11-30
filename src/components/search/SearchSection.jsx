@@ -31,10 +31,16 @@ const newTaipeiDists = [
   "樹林",
   "鶯歌",
   "三峽",
-]
+];
 const allDists = { 臺北市: taipeiDists, 新北市: newTaipeiDists, 臺中市: [] };
 
-const SearchSection = ({ areaToggles, setAreaToggles, cityFilter, setCityFilter }) => {
+const SearchSection = ({
+  areaToggles,
+  setAreaToggles,
+  cityFilter,
+  setCityFilter,
+  setSearchString,
+}) => {
   const [isToggleAll, setIsToggleAll] = useState(true);
 
   useEffect(() => {
@@ -79,7 +85,7 @@ const SearchSection = ({ areaToggles, setAreaToggles, cityFilter, setCityFilter 
         <h1 className="text-[24px] font-bold text-green">站點資訊</h1>
         <div className="flex flex-col md:flex-row gap-[8px] md:gap-[16px]">
           <CityDropdown setCityFilter={setCityFilter} />
-          <SearchBar />
+          <SearchBar setSearchString={setSearchString} />
         </div>
         <div className="flex flex-col gap-[15px]">
           <ToggleAll
