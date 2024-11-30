@@ -101,7 +101,7 @@ const SearchSection = ({
         </div>
       </div>
       <div className="hidden md:flex h-[400px] pr-16 justify-end items-end">
-        <img src={biking} alt="ubike bikibg" />
+        <img src={biking} alt="YouBike biking" />
       </div>
     </div>
   );
