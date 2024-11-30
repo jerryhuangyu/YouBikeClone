@@ -32,8 +32,8 @@ const TableBody = ({ datas }) => {
             city={"台北市"}
             dist={data.sarea}
             siteName={data.sna.replace("YouBike2.0_", "")}
-            availableBike={data.tot}
-            availableSpace={data.sbi}
+            availableBike={data.available_rent_bikes}
+            availableSpace={data.available_return_bikes}
             isEven={index % 2 === 0 ? false : true}
           />
         );

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { twoWayArrow, upArrow, downArrow } from "../../assets";
+import { downArrow, twoWayArrow, upArrow } from "../../assets";
 
 const SortArrowIcon = ({ iconIndex }) => {
   const icon = [twoWayArrow, upArrow, downArrow];
@@ -44,8 +44,8 @@ const TableHeads = ({ handleSort }) => {
     city: true,
     sarea: true,
     sna: true,
-    tot: true,
-    sbi: true,
+    available_rent_bikes: true,
+    available_return_bikes: true,
   });
   const [currentOnClick, setCurrenOnClick] = useState("");
 
@@ -80,8 +80,8 @@ const TableHeads = ({ handleSort }) => {
           headerText="可借車輛"
           currentOnClick={currentOnClick}
           handleClick={() => {
-            handleSort("tot", isAscending.tot);
-            setIsAscending((prev) => ({ ...prev, tot: !prev.tot }));
+            handleSort("available_rent_bikes", isAscending.available_rent_bikes);
+            setIsAscending((prev) => ({ ...prev, available_rent_bikes: !prev.available_rent_bikes }));
             setCurrenOnClick("可借車輛");
           }}
         />
@@ -90,8 +90,8 @@ const TableHeads = ({ handleSort }) => {
           headerText="可還空位"
           currentOnClick={currentOnClick}
           handleClick={() => {
-            handleSort("sbi", isAscending.sbi);
-            setIsAscending((prev) => ({ ...prev, sbi: !prev.sbi }));
+            handleSort("available_return_bikes", isAscending.available_return_bikes);
+            setIsAscending((prev) => ({ ...prev, available_return_bikes: !prev.available_return_bikes }));
             setCurrenOnClick("可還空位");
           }}
         />
